@@ -1,0 +1,42 @@
+
+<p id="notice"><%= notice %></p>
+
+
+
+
+
+     <div class="media">
+       <div class="media-top media-middle">
+         <a href="#">
+           <img class="media-object" >
+
+         </a>
+       </div>
+       <div class="media-body">
+         <h4 class="media-heading">
+
+       </div>
+     </div>
+
+
+     <div class="row">
+       <div class="col-sm-6 col-md-4">
+         <div class="thumbnail">
+           <%= image_tag @pin.image.url(:medium), class: "img-responsive" %>
+           <div class="caption">
+            <center><h4> <%= @pin.title %></h4>
+             <%= @pin.description %></center>
+             <hr style="width: 70%; color: black; height: 1px; background-color:black;" />
+              <center>
+                  <% if current_user == @pin.user %>
+                    <p>
+                       <%= link_to 'Edit', edit_pin_path(@pin), class:"btn btn-primary" %>
+                  <% else %>
+                     <%= link_to 'Back', pins_path, class:"btn btn-default" %>
+                   </p>
+                  <% end %>
+              </center>
+           </div>
+         </div>
+       </div>
+     </div>
